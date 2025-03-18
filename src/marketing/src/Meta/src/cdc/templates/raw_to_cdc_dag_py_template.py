@@ -42,7 +42,7 @@ _DAG_OPTIONS = {
     "dag_id": _IDENTIFIER,
     "description": f"Extract {_TABLE_NAME} from Raw to CDC layer",
     "start_date": _START_DATE,
-    "dagrun_timeout": timedelta(minutes=60),
+    "dagrun_timeout": timedelta(minutes=360),
     "tags": ["meta", "cdc"],
     "catchup": False,
     "max_active_runs": 1
