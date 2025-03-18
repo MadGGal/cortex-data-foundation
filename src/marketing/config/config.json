@@ -1,24 +1,51 @@
 {
     "testData": false,
+    "deploySAP": false,
+    "deploySFDC": false,
     "deployMarketing": true,
-    "deployDataMesh": false,
+    "deployOracleEBS": false,
+    "deployDataMesh": true,
+    "deploySAPMLModels": false,
     "turboMode": true,
     "projectIdSource": "mad-cortex",
     "projectIdTarget": "mad-cortex",
-    "targetBucket": "US",
+    "targetBucket": "cortex_multi_us",
     "location": "US",
-    "languages": [
-        "E",
-        "S"
-    ],
-    "currencies": [
-        "USD"
-    ],
+    "testDataProject": "",
     "k9": {
         "datasets": {
             "processing": "K9_PROCESSING",
             "reporting": "K9_REPORTING"
+        },
+        "deployDateDim": false,
+        "deployHolidayCalendar": false,
+        "deployCountryDim": false,
+        "deploySustainability": false,
+        "deployProductDim": false,
+        "deployCurrencyConversion": false,
+        "deployCrossMedia": false,
+        "deployCATGAP": false,
+        "deployWeather": false,
+        "deployTrends": false,
+        "ProductDim": {
+            "dataSourceType": "",
+            "textLanguage": ""
+        },
+        "CurrencyConversion": {
+            "dataSourceType": "",
+            "rateType": ""
+        },
+        "CrossMedia": {
+            "productHierarchyType": "",
+            "maxProductHierarchyMatchLevel": 9,
+            "targetCurrencies": ["USD"],
+            "additionalPrompt": "",
+            "lookbackWindowDays": 7
         }
+    },
+    "VertexAI": {
+        "region": "us-central1",
+        "processingDataset": "CORTEX_VERTEX_AI_PROCESSING"
     },
     "DataMesh": {
         "deployDescriptions": true,
@@ -26,26 +53,58 @@
         "deployCatalog": false,
         "deployACLs": false
     },
+    "SAP": {
+        "deployCDC": false,
+        "SQLFlavor": "ecc",
+        "mandt": "100",
+        "languages": [
+            "E",
+            "S"
+        ],
+        "currencies": [
+            "USD"
+        ],
+        "datasets": {
+            "cdc": "",
+            "raw": "",
+            "ml": "ML_MODELS",
+            "reporting": "REPORTING"
+        }
+    },
+    "SFDC": {
+        "deployCDC": false,
+        "createMappingViews": false,
+        "createPlaceholders": false,
+        "currencies": [
+            "USD"
+        ],
+        "datasets": {
+            "cdc": "",
+            "raw": "",
+            "reporting": "REPORTING_SFDC"
+        }
+    },
     "marketing": {
-        "deployGoogleAds": false,
-        "deployCM360": true,
+        "deployGoogleAds": true,
+        "deployCM360": false,
         "deployTikTok": false,
         "deployLiveRamp": false,
-        "deployMeta": false,
+        "deployMeta": true,
         "deploySFMC": false,
         "deployDV360": false,
         "deployGA4": false,
-        "dataflowRegion": "",
+        "dataflowRegion": "us-central1",
         "GoogleAds": {
-            "deployCDC": false,
+            "deployCDC": true,
+            "lookbackDays": 90,
             "datasets": {
-                "cdc": "",
-                "raw": "",
-                "reporting": "REPORTING_GoogleAds"
+                "cdc": "gads_cdc",
+                "raw": "gads_raw",
+                "reporting": "REPORTING_GoogleAds_Monthly_us"
             }
         },
         "CM360": {
-            "deployCDC": true,
+            "deployCDC": false,
             "dataTransferBucket": "cm360_cortex_raw_data_transfer",
             "datasets": {
                 "cdc": "cm360_cdc_us",
@@ -67,11 +126,11 @@
             }
         },
         "Meta": {
-            "deployCDC": false,
+            "deployCDC": true,
             "datasets": {
-                "cdc": "",
-                "raw": "",
-                "reporting": "REPORTING_Meta"
+                "cdc": "meta_cdc",
+                "raw": "meta_raw",
+                "reporting": "REPORTING_MetaAds_us"
             }
         },
         "SFMC": {
@@ -94,10 +153,29 @@
         "GA4": {
             "datasets": {
                 "cdc": [
-                    {"property_id": 0, "name": ""}
+                    {
+                        "property_id": 0,
+                        "name": ""
+                    }
                 ],
                 "reporting": "REPORTING_GA4"
             }
+        }
+    },
+    "OracleEBS": {
+        "itemCategorySetIds": [
+            1100000425
+        ],
+        "currencyConversionType": "Corporate",
+        "currencyConversionTargets": [
+            "USD"
+        ],
+        "languages": [
+            "US"
+        ],
+        "datasets": {
+            "cdc": "",
+            "reporting": "REPORTING_OracleEBS"
         }
     }
 }
