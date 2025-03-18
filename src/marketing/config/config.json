@@ -1,11 +1,11 @@
 {
-    "testData": true,
+    "testData": false,
     "deployMarketing": true,
-    "deployDataMesh": true,
+    "deployDataMesh": false,
     "turboMode": true,
-    "projectIdSource": "",
-    "projectIdTarget": "",
-    "targetBucket": "",
+    "projectIdSource": "mad-cortex",
+    "projectIdTarget": "mad-cortex",
+    "targetBucket": "US",
     "location": "US",
     "languages": [
         "E",
@@ -27,17 +27,17 @@
         "deployACLs": false
     },
     "marketing": {
-        "deployGoogleAds": true,
+        "deployGoogleAds": false,
         "deployCM360": true,
-        "deployTikTok": true,
-        "deployLiveRamp": true,
-        "deployMeta": true,
-        "deploySFMC": true,
-        "deployDV360": true,
-        "deployGA4": true,
+        "deployTikTok": false,
+        "deployLiveRamp": false,
+        "deployMeta": false,
+        "deploySFMC": false,
+        "deployDV360": false,
+        "deployGA4": false,
         "dataflowRegion": "",
         "GoogleAds": {
-            "deployCDC": true,
+            "deployCDC": false,
             "datasets": {
                 "cdc": "",
                 "raw": "",
@@ -46,15 +46,15 @@
         },
         "CM360": {
             "deployCDC": true,
-            "dataTransferBucket": "",
+            "dataTransferBucket": "cm360_cortex_raw_data_transfer",
             "datasets": {
-                "cdc": "",
-                "raw": "",
+                "cdc": "cm360_cdc_us",
+                "raw": "cm360_raw_us",
                 "reporting": "REPORTING_CM360"
             }
         },
         "TikTok": {
-            "deployCDC": true,
+            "deployCDC": false,
             "datasets": {
                 "cdc": "",
                 "raw": "",
@@ -67,7 +67,7 @@
             }
         },
         "Meta": {
-            "deployCDC": true,
+            "deployCDC": false,
             "datasets": {
                 "cdc": "",
                 "raw": "",
@@ -75,7 +75,7 @@
             }
         },
         "SFMC": {
-            "deployCDC": true,
+            "deployCDC": false,
             "fileTransferBucket": "",
             "datasets": {
                 "cdc": "",
@@ -84,7 +84,7 @@
             }
         },
         "DV360": {
-            "deployCDC": true,
+            "deployCDC": false,
             "datasets": {
                 "raw": "",
                 "cdc": "",
