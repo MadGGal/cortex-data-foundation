@@ -55,7 +55,7 @@ _DAG_OPTIONS = {
     "dag_id": _IDENTIFIER,
     "description": f"Extract from source to raw {_TABLE_NAME} entities",
     "start_date": _START_DATE,
-    "dagrun_timeout": timedelta(minutes=60),
+    "dagrun_timeout": timedelta(minutes=360),
     "tags": ["GoogleAds", "raw"],
     "catchup": False,
     "max_active_runs": 1
