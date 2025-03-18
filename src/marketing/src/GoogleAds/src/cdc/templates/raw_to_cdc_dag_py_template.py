@@ -54,7 +54,7 @@ _DAG_OPTIONS = {
     "dag_id": _IDENTIFIER,
     "description": f"Extract {_TABLE_NAME} from raw to cdc",
     "start_date": _START_DATE,
-    "dagrun_timeout": timedelta(minutes=60),
+    "dagrun_timeout": timedelta(minutes=360),
     "tags": ["GoogleAds", "cdc"],
     "catchup": False,
     "max_active_runs": 1
