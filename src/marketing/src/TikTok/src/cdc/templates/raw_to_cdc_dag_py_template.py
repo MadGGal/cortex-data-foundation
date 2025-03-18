@@ -71,7 +71,7 @@ with DAG(dag_id=_IDENTIFIER,
          description=f"Extract {_TABLE_NAME} from raw to cdc",
          schedule=_DAG_SCHEDULE,
          start_date=_START_DATE,
-         dagrun_timeout=timedelta(minutes=60),
+         dagrun_timeout=timedelta(minutes=360),
          tags=["tiktok", "cdc"],
          catchup=False,
          max_active_runs=1) as dag:
