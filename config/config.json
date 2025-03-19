@@ -11,7 +11,7 @@
     "projectIdTarget": "mad-cortex",
     "targetBucket": "cortex_multi_us",
     "location": "US",
-    "testDataProject": "kittycorn-public",
+    "testDataProject": "",
     "k9": {
         "datasets": {
             "processing": "K9_PROCESSING",
@@ -96,10 +96,10 @@
         "dataflowRegion": "US",
         "GoogleAds": {
             "deployCDC": false,
-            "lookbackDays": 180,
+            "lookbackDays": 90,
             "datasets": {
-                "cdc": "",
-                "raw": "",
+                "cdc": "GoogleAds_cdc",
+                "raw": "GoogleAds_raw",
                 "reporting": "REPORTING_GoogleAds"
             }
         },
@@ -107,8 +107,8 @@
             "deployCDC": true,
             "dataTransferBucket": "cm360_cortex_raw_data_transfer",
             "datasets": {
-                "cdc": "cm360_cdc_us",
-                "raw": "cm360_raw_us",
+                "cdc": "Cm360_cdc",
+                "raw": "Cm360_raw",
                 "reporting": "REPORTING_CM360"
             }
         },
@@ -128,8 +128,8 @@
         "Meta": {
             "deployCDC": false,
             "datasets": {
-                "cdc": "",
-                "raw": "",
+                "cdc": "Meta_cdc",
+                "raw": "Meta_raw",
                 "reporting": "REPORTING_Meta"
             }
         },
